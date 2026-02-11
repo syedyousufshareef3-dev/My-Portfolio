@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer | Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&family=Space+Mono:ital,wght@0,400;1,400&display=swap');
+
+        :root {
+            /* Midnight Prism Palette */
+            --bg-color: #050508;       /* Void Black */
+            --text-primary: #ffffff;   
+            --text-secondary: #8b9bb4;
+            --accent-cyan: #00f3ff;    /* Neon Cyan */
+            --accent-pink: #bc13fe;    /* Electric Pink */
+            --glass-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mono { font-family: 'Space Mono', monospace; color: var(--accent-cyan); font-size: 0.9rem; }
+
+        /* 3D Canvas */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5vw 10vw;
+            position: relative;
+        }
+
+        /* --- HERO --- */
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 2rem; }
+        .hero .tagline { 
+            font-family: 'Space Mono', monospace; 
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 50px;
+        }
+
+        /* --- SKILLS (Grid Layout) --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .skill-item {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+            transition: 0.3s;
+        }
+        
+        .skill-item:hover {
+            border-bottom: 1px solid var(--accent-cyan);
+            padding-left: 10px;
+        }
+
+        .skill-tags span {
+            display: inline-block;
+            background: var(--glass-bg);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-top: 10px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* --- PROJECTS (Cards) --- */
+        .project-container {
+            display: flex;
+            gap: 2rem;
+            perspective: 1000px;
+        }
+        
+        .project-card {
+            flex: 1;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <section class="hero">
+        <p class="mono">/// SYSTEM ONLINE</p>
+        <h1>HELLO! <br> I'M SYED YOUSUF SHAREEF.</h1>
+        <div>
+            <span class="tagline">AI ENGINEER & DATA SCIENTIST</span>
+        </div>
+    </section>
+
+    <section class="about">
+        <p class="mono">/// ABOUT ME</p>
+        <h2>Who Am I?</h2>
+        <p style="margin-top: 20px; max-width: 600px; line-height: 1.6;">
+            I'm a passionate AI Engineer and Data Scientist with a knack for transforming complex data into actionable insights. With a strong foundation in machine learning, deep learning, and data visualization, I thrive on solving real-world problems through innovative solutions. My journey in the tech world has been fueled by curiosity and a relentless drive to learn and grow.
+        </p>
+    </section>
+
+    <section class="skills">
+        <p class="mono">/// CAPABILITIES</p>
+        <h2>The Stack</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>Core Engineering</h3>
+                <div class="skill-tags">
+                    <span>PYTHON</span><span>C++</span><span>JAVA-OOP</span><span>DATA STRUCTURES</span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>Artificial Intelligence</h3>
+                <div class="skill-tags">
+                    <span>TENSORFLOW</span><span>ALGORITHMS</span><span>MACHINE LEARNING</span><span>NEURAL NETWORKS</span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>Data Systems and Visualization</h3>
+                <div class="skill-tags">
+                    <span>POSTGRESQL</span><span>MYSQL</span><span>EDA</span><span>VISUALIZATION</span><span>EXCEL</span><SPAN>ANALYTICS USING R</SPAN>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>Web & Interface</h3>
+                <div class="skill-tags">
+                    <span>JAVASCRIPT</span><span>THREE.JS</span><span>HTML5/CSS3</span><span>NODE.JS</span><span>XML</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <p class="mono">/// DEPLOYMENTS</p>
+        <h2>Featured Works</h2><br>
+        <div class="project-container">
+            <div class="project-card">
+                <h3>Predicting Flight-Delays</h3>
+                <p class="mono" style="margin: 10px 0; color: var(--text-secondary);">MACHINE LEARNING APPROACH</p>
+                <p>An intelligent System built upon MACHINE LEARNING approach to simplify the pre-existing Deep Learning Approach.</p>
+            </div>
+            <div class="project-card">
+                <h3>E-Commerce EDA</h3>
+                <p class="mono" style="margin: 10px 0; color: var(--text-secondary);">DATA ANALYSIS</p>
+                <p>Comprehensive exploratory analysis of sales trends using Python pandas and seaborn.</p>
+            </div>
+            <div class="project-card">
+                <h3>Neural Engine</h3>
+                <p class="mono" style="margin: 10px 0; color: var(--text-secondary);">DEEP LEARNING</p>
+                <p>Custom multi-layer feed-forward network built from scratch to understand backpropagation and gradient descent for neural networks.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 SYED'S PORTFOLIO. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // --- 1. THREE.JS SETUP ---
+        const scene = new THREE.Scene();
+        // No fog, just deep space
+        
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        // --- 2. OBJECTS (The Neural Mesh) ---
+        
+        // Sphere of Particles (representing Data Points)
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 2000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 15; // Spread them out
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const materialParticles = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x00f3ff, // Cyan
+        });
+        const particlesMesh = new THREE.Points(particlesGeometry, materialParticles);
+        scene.add(particlesMesh);
+
+        // The "Core" Shape (Wireframe Icosahedron)
+        const geoCore = new THREE.IcosahedronGeometry(2, 1);
+        const matCore = new THREE.MeshBasicMaterial({ 
+            color: 0xbc13fe, // Pink
+            wireframe: true,
+            transparent: true,
+            opacity: 0.3
+        });
+        const coreMesh = new THREE.Mesh(geoCore, matCore);
+        scene.add(coreMesh);
+
+        camera.position.z = 5;
+
+        // --- 3. MOUSE INTERACTION ---
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX / window.innerWidth - 0.5;
+            mouseY = event.clientY / window.innerHeight - 0.5;
+        });
+
+        // --- 4. ANIMATION LOOP ---
+        const clock = new THREE.Clock();
+
+        function animate() {
+            const elapsedTime = clock.getElapsedTime();
+
+            // Rotation
+            coreMesh.rotation.y = elapsedTime * 0.2;
+            particlesMesh.rotation.y = elapsedTime * 0.05;
+
+            // Mouse Parallax
+            particlesMesh.rotation.x += (mouseY * 0.5 - particlesMesh.rotation.x) * 0.05;
+            particlesMesh.rotation.y += (mouseX * 0.5 - particlesMesh.rotation.y) * 0.05;
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // --- 5. GSAP SCROLL ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Distort/Explode particles on scroll
+        gsap.to(particlesMesh.scale, {
+            x: 1.5,
+            y: 1.5,
+            scrollTrigger: {
+                trigger: ".skills",
+                start: "top bottom",
+                end: "center center",
+                scrub: 1
+            }
+        });
+
+        // Move the Core shape
+        gsap.to(coreMesh.position, {
+            x: 3,
+            z: 1,
+            scrollTrigger: {
+                trigger: ".skills",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        // Color shift for the Core
+        gsap.to(matCore.color, {
+            r: 0, g: 0.9, b: 1, // Shift to Cyan
+            scrollTrigger: {
+                trigger: ".projects",
+                start: "top center",
+                end: "bottom bottom",
+                scrub: 1
+            }
+        });
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
